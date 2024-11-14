@@ -3,142 +3,93 @@
 using namespace std;
 
 template <typename T>
-class SingleLinkedList 
+class DoubleLinkedList
 {
 private:
-	struct Node
-	{
-		T data;
-		Node* next;
-	};
+    struct Node
+    {
+        T data;
+        Node* next;
+        Node* previous;
+    };
 
-		int size;
-		Node * head;
+    int size;
+
+    Node* head;
+    Node* tail;
 
 public:
-	SingleLinkedList()
-	{
-		size = 0;
-		head = nullptr;
-	};
 
-	void PushFront(T data)
-	{
-		if (head == nullptr)
-		{
-			head = new Node;
+    DoubleLinkedList()
+    {
+        size = 0;
+        head = nullptr;
+        tail = nullptr;
+    }
 
-			head->data = data;
-			head->next = nullptr;
-		}
-		else
-		{
-			Node * newNode = new Node;
+    void PushFront(T data)
+    {
+        Node* newNode = new Node;
 
-			newNode->data = data;
-			newNode->next = head;
+        newNode->data = data;
+        newNode->next = nullptr;
+        newNode->previous = nullptr;
 
-			head = newNode;
-		}
+        if (head == nullptr)
+        {
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            head->previous = newNode;
+            newNode->next = head;
 
-		size++;
-		
-	}
-	void PoPFront()
-	{
-		if (head == nullptr)
-		{
-			cout << "Linked List is Empty" << endl;
-		}
-		else
-		{
-			Node * deleteNode = head;
-			
-			head = deleteNode->next;
+            head = newNode;
+        }
 
-			delete deleteNode;
-			
-			size--;
-		}
-	}
-	void PushBack(T data)
-	{
-		if (head == nullptr)
-		{
-			head = new Node;
+        size++;
+    }
 
-			head->data = data;
-			head->next = nullptr;
-		}
-		else
-		{
-			Node* currentNode = head;
+    void PoPFront()
+    {
+        if (head == nullptr)
+        {
+            cout << "Linked List is Empty" << endl;
+        }
+        else
+        {
+            Node * deleteNode = head;
 
-			while (currentNode->next != nullptr)
-			{
-				currentNode = currentNode->next;
-			}
+            if (head == tail)
+            {
+                head = nullptr;
+                tail = nullptr;
+            }
+            else
+            {
+                deleteNode->next->previous = nullptr;
 
-			Node * newNode = new Node;
+                head = head->next;
+            }
 
-			currentNode->next = newNode;
+            delete deleteNode;
 
-			newNode->data = data;
-			newNode->next = nullptr;
-		}
-
-		size++;
-	}
-	void Show()
-	{
-		if (head == nullptr)
-		{
-			cout << "List is empty" << std::endl;
-		}
-
-		Node* currentNode = head;
-
-		while (currentNode != nullptr)
-		{
-			cout << currentNode->data << " ";
-			currentNode = currentNode->next;
-		}
-
-		cout << std::endl;
-	}
-	void PoPBack()
-	{
-		Node* deleteNode = head;
-
-		if (head->next == nullptr)
-		{
-			delete deleteNode;
-		}
-		else
-		{
-		
-		}
-	}
+            size--;
+        }
+    }
 };
 
 int main()
 {
-	SingleLinkedList<int> singleLinkedList;
+    DoubleLinkedList<int> doubleLinkedList;
 
-	singleLinkedList.PushFront(10);
-	singleLinkedList.PushFront(20); // [20]<------- [10]
+    doubleLinkedList.PushFront(10);
+    doubleLinkedList.PushFront(20);
 
-	// [20] - [10]
+    doubleLinkedList.PoPFront();
+    doubleLinkedList.PoPFront();
+    doubleLinkedList.PoPFront();
 
-	singleLinkedList.PushBack(5);
-	singleLinkedList.PushBack(0);
-
-	// [20] - [10] - [5] - [0]  
-
-	singleLinkedList.Show();
-
-	singleLinkedList.PoPFront();
-	singleLinkedList.PoPFront();
-
-	return 0;
+    return 0;
 }
