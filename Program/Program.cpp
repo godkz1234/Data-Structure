@@ -5,46 +5,104 @@ using namespace std;
 #define SIZE 5
 
 template <typename T>
-class LinearQueue
+
+class CircleQueue
 {
 private:
-	int size;
-	int rear;
-	int front;
-	T container[SIZE];
+    int size;
+    int rear;
+    int front;
+
+    T container[SIZE];
+
 public:
-	LinearQueue()
-	{
-		size = 0;
-		rear = 0;
-		size = 0;
-		for (int i = 0; i < SIZE; i++)
-		{
-			container[i] = NULL;
-		}
-	} 
+    CircleQueue()
+    {
+        size = 0;
+        rear = SIZE - 1;
+        front = SIZE - 1;
 
-	void Push(T data)
-	{
-		if (rear >= SIZE)
-		{
-			cout << "Linear Queue Overflow" << endl;
-		}
-		else
-		{
-			container[rear++] = data;
+        for (int i = 0; i < SIZE; i++)
+        {
+            container[i] = NULL;
+        }
+    }
+    
+    void Push(T data)
+    {
+        if (front == (rear + 1) % SIZE)
+        {
+            cout << "Circle Queue Overflow" << endl;
+            return;
+        }
+        else
+        {
+            rear = (rear + 1) % SIZE;
+            container[rear] = data;
+            size++;
+        }
+    }
 
-			size++;
-		}
-	}
+    void PoP()
+    {
+        if (Empty())
+        {
+            cout << "Linear Queue is Empty" << endl;
+        }
+        else
+        {
+            front = (front + 1) % SIZE;
+
+            container[front] = NULL;
+
+            size--;
+        }
+    }
+
+    bool Empty()
+    {
+        if (front == rear)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    int& Size()
+    {
+        return size;
+    }
+
+    T& Front()
+    {
+        return container[(front + 1) % SIZE];
+    }
+
 };
 
 int main()
 {
-	LinearQueue<int> linearQueue;
+    CircleQueue<char> circleQueue;
 
-	linearQueue.Push(10);
-	linearQueue.Push(20);
+    circleQueue.Push('A');
+    circleQueue.Push('B');
+    circleQueue.Push('C');
+    circleQueue.Push('D');
 
-	return 0;
-};
+    while (circleQueue.Empty() == false)
+    {
+        cout << circleQueue.Front() << endl;
+
+        circleQueue.PoP();
+    }
+
+    circleQueue.Push('E');
+    circleQueue.Push('F');
+    circleQueue.Push('G');
+    circleQueue.Push('H');
+    
+    return 0;
+}
