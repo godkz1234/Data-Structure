@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D27B3605-BB88-4BFC-BD48-6B49A8715672}|Program.vcxproj|C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D27B3605-BB88-4BFC-BD48-6B49A8715672}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81996A7C-AADC-49DA-90F5-1C272B88FACF}|..\\Class4th (Stack)\\Class4th (Stack).vcxproj|C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class4th (Stack)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,23 +24,10 @@
               "RelativeDocumentMoniker": "Program.cpp",
               "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAADoAAAAAAAAAAAAmwEoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAkwH0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-12T11:02:46.57Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class4th (Stack)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\Class4th (Stack)\\Source.cpp",
-              "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class4th (Stack)\\Source.cpp",
-              "RelativeToolTip": "..\\Class4th (Stack)\\Source.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAADwv10AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-25T11:39:13.508Z",
               "EditorCaption": ""
             }
           ]
