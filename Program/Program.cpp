@@ -2,184 +2,72 @@
 
 using namespace std;
 
-class String
+struct Node
 {
-private:
-    int size;
-    char* container;
-
-public:
-    String()
-    {
-        size = 0;
-        container = nullptr;
-    }
-
-    void operator = (const char * word)
-    {
-        int arraySize = strlen(word) + 1;
-
-        size = strlen(word);
-
-        if (container == nullptr)
-        {
-            container = new char[arraySize];
-
-            for (int i = 0; i < arraySize; i++)
-            {
-                container[i] = word[i];
-            }
-        }
-        else
-        {
-            char* newContainer = new char[arraySize];
-
-            for (int i = 0; i < arraySize; i++)
-            {
-                newContainer[i] = word[i];
-            }
-
-            delete container;
-
-            container = newContainer;
-        }
-
-
-    }
-
-    void Append(const char * word)
-    {
-        int newSize = strlen(container) + strlen(word);
-
-        char* newContainer = new char[newSize];
-
-        for (int i = 0; i < strlen(container); i++)
-        {
-            newContainer[i] = container[i];
-        }
-        for (int i = 0; i < strlen(word); i++)
-        {
-            newContainer[strlen(container)+ i] = word[i];
-        }
-
-        size = newSize;
-
-        delete[] container;
-
-        container = newContainer;
-
-    }
-
-    // int CompareString(const char* classString, const char* otherString)
-    // {
-    //     int size = 0;
-    // 
-    //     while (classString[size] != '\0' && otherString[size] != '\0') 
-    //     {
-    //         if (classString[size] != otherString[size]) 
-    //         {
-    //             return classString[size] - otherString[size]; 
-    //         }
-    //         size++; 
-    //     }
-    //     return classString[size] - otherString[size];
-    // }
-
-    int Compare(const char* word)
-    {
-        int count = 0;
-
-        for (int i = 0; i < strlen(word); i++)
-        {
-            if (container[i] != word[i])
-            {
-                break;
-            }
-            else
-            {
-                count++;
-            }
-        }
-        if (strlen(word) == count)
-        {
-            return 0;
-        }
-
-        int classString = 0;
-        int otherString = 0;
-
-        for (int i = 0; i < strlen(container); i++)
-        {
-            classString += container[i];
-        }
-
-        for (int i = 0; i < strlen(word); i++)
-        {
-            otherString += word[i];
-        }
-
-        if (classString > otherString)
-        {
-            return 1;
-        }
-        else
-        {
-            return -1;
-        }
-    }
-
-    char operator [] (const int& index)
-    {
-        return container[index];
-    }
-
-    int& Size()
-    {
-        return size;
-    }
-
-    ~String()
-    {
-        if (container != nullptr)
-        {
-            delete[] container;
-        }
-    }
-
+    int data;
+    Node * left;
+    Node * right; 
 };
+
+Node * CreateNode(int data, Node * left, Node * right)
+{
+    Node * newNode = new Node();
+
+    newNode->data = data;
+    newNode->left = left;
+    newNode->right = right;
+
+    return newNode;
+}
+
+void Preorder(Node * root)
+{
+    if (root != nullptr)
+    {
+        cout << "Pre : " << root->data << endl;
+        Preorder(root->left);
+        Preorder(root->right);
+    }
+}
+
+void Inorder(Node * root)
+{
+    if (root != nullptr)
+    {
+        Inorder(root->left);
+        cout << "Ino : " << root->data << endl;
+        Inorder(root->right);
+    }
+}
+
+void Postorder(Node* root)
+{
+    if (root != nullptr)
+    {
+       
+        Postorder(root->left);
+        Postorder(root->right);
+        cout << "Pos : " << root->data << endl;
+    }
+}
+
 
 int main()
 {
-    String string;
+        Node* node5 = CreateNode(5, nullptr , nullptr);
+        Node* node4 = CreateNode(4, nullptr , nullptr);
+        Node* node3 = CreateNode(3, nullptr , nullptr);
+        Node* node2 = CreateNode(2, node4 , node5);
+        Node* node1 = CreateNode(1, node2 , node3);
 
-    string = "Janna";
+        // 전위 순회
+        Preorder(node1);
 
-    for (int i = 0; i < string.Size(); i++)
-    {
-        cout << string[i];
-    }
+        // 중위 순회
+        Inorder(node1);
 
-    cout << endl;
-
-    string = "Bard";
-
-    string.Append(" Character ");
-
-    for (int i = 0; i < string.Size(); i++)
-    {
-        cout << string[i];
-    }
-
-    cout << endl;
-
-    // const char* str1 = "apple";
-    // const char* str2 = "banana";
-    // 
-    // cout << "\"" << str1 << "\" and \"" << str2 << "\": " << string.CompareString(str1, str2) << "\n";
-    // cout << "\"" << str1 << "\" and \"" << str1 << "\": " << string.CompareString(str1, str1) << "\n";
-    // cout << "\"" << str2 << "\" and \"" << str1 << "\": " << string.CompareString(str2, str1) << "\n";
-
-
+        // 후위 순회
+        Postorder(node1);
 
     return 0;
 }
