@@ -2,71 +2,114 @@
 
 using namespace std;
 
-#define SIZE 10
-
 template <typename T>
 
-class AdjacencyList
+class BinarySearchTree
 {
 private:
 	struct Node
 	{
 		T data;
-		Node* next;
+			 
+		Node * left;
+		Node * right;
+	};		 
 
-		Node(T data, Node * link = nullptr)
-		{
-			this->data = data;
-			next = link;
-		}
-	};
-
-	int size; // 정점의 개수
-	T vertex[SIZE]; // 정점의 집합
-	Node * list[SIZE]; // 인접 리스트
+	Node * root;
 
 public:
-
-	AdjacencyList()
+	BinarySearchTree()
 	{
-		size = 0;
-		for (int i = 0; i < SIZE; i++)
-		{
-			list[i] = NULL;
-			vertex[1] = NULL;
-		}
+		root = nullptr;
+	}
+
+	Node * RootNode()
+	{
+		return root;
+	}
+
+	Node * CreateNode(T data)
+	{
+		Node* newNode = new Node();
+
+		newNode->data = data;
+
+		newNode->left = nullptr;
+
+		newNode->right = nullptr;
+
+		return newNode;
 	}
 
 	void Insert(T data)
 	{
-		if (size >= SIZE)
+		if (root == nullptr)
 		{
-			cout << "Adjancency Matrix Overflow" << endl;
+			root = CreateNode(data);
 		}
 		else
 		{
-			vertex[size++] = data;
-		}
+			Node* currentNode = root;
 
-	}
-
-	~AdjacencyList()
-	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			if (list[i] != nullptr)
+			while (currentNode != nullptr)
 			{
-				delete [] list[i];
+				if (currentNode->data == data)
+				{
+					return;
+				}
+				else if(currentNode->data > data)
+				{
+					if (currentNode->left == nullptr)
+					{
+						currentNode->left = CreateNode(data);
+						break;
+					}
+					else
+					{
+						currentNode = currentNode->left;
+					}
+				}
+				else
+				{
+					if (currentNode->right == nullptr)
+					{
+						currentNode->right = CreateNode(data);
+
+						break;
+					}
+					else
+					{
+						currentNode = currentNode->right;
+					}
+				}
 			}
 		}
 	}
+
+	void Inorder(Node * root)
+	{
+		if (root == nullptr)
+		{
+			return;
+		}
+		Inorder(root->left);
+		cout << root->data;
+		Inorder(root->right);
+	}
+
 };
 
 int main()
 {
-	AdjacencyList<char> adjacencyList;
+	BinarySearchTree<int> binarySearchTree;
 
+	binarySearchTree.Insert(20);
+	binarySearchTree.Insert(3);
+	binarySearchTree.Insert(30);
+	binarySearchTree.Insert(8);
+	binarySearchTree.Insert(10);
 
+	binarySearchTree.Inorder(binarySearchTree.RootNode());
 	return 0;
 }
 

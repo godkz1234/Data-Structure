@@ -7,10 +7,7 @@
       "RelativeMoniker": "D:0:0:{D27B3605-BB88-4BFC-BD48-6B49A8715672}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDC45700-481F-414A-B18B-517CB7EE553D}|..\\Class1th (Single Linked List)\\Class1th (Single Linked List).vcxproj|C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class1th (Single Linked List)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F80A1FD-3501-49B6-B40E-C63BE0EF8211}|..\\class12th (Adjancency Matrix)\\class12th (Adjancency Matrix).vcxproj|C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\class12th (Adjancency Matrix)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AEFF6E07-61E5-4597-A5A5-A451CFC2E7B8}|..\\Class13th (Adjacency List)\\Class13th (Adjacency List).vcxproj|C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class13th (Adjacency List)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +27,7 @@
               "RelativeDocumentMoniker": "Program.cpp",
               "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAtwG8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-12T11:02:46.57Z",
               "IsPinned": true,
@@ -38,28 +35,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\class12th (Adjancency Matrix)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\class12th (Adjancency Matrix)\\Source.cpp",
-              "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\class12th (Adjancency Matrix)\\Source.cpp",
-              "RelativeToolTip": "..\\class12th (Adjancency Matrix)\\Source.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:36:18.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class1th (Single Linked List)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\Class1th (Single Linked List)\\Source.cpp",
-              "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class1th (Single Linked List)\\Source.cpp",
-              "RelativeToolTip": "..\\Class1th (Single Linked List)\\Source.cpp",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAqwJAAAAACAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class13th (Adjacency List)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\Class13th (Adjacency List)\\Source.cpp",
+              "ToolTip": "C:\\Users\\dddde\\Desktop\\Progaming\\Data-Structure\\Class13th (Adjacency List)\\Source.cpp",
+              "RelativeToolTip": "..\\Class13th (Adjacency List)\\Source.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:14:49.595Z",
+              "WhenOpened": "2024-12-05T12:06:29.088Z",
               "EditorCaption": ""
             }
           ]
